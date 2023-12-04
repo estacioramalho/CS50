@@ -3,12 +3,46 @@
 
 int main(void)
 {
-    printf("Hello World!")
-    // TODO: Prompt for start size
+    // Prompt for start size
+    int startingPopulation;
+    do
+    {
+        startingPopulation = get_int("Starting population: ");
+    }
+    while (startingPopulation < 9);
 
-    // TODO: Prompt for end size
+    // Prompt for end size
+    int targetPopulation;
+    do
+    {
+        targetPopulation = get_int("Target population: ");
+    }
+    while (targetPopulation < startingPopulation);
 
-    // TODO: Calculate number of years until we reach threshold
+    // Initialize current population and years elapsed
+    int currentPopulation = startingPopulation;
+    int yearsElapsed = 0;
 
-    // TODO: Print number of years
+    // If starting and target population are the same, print years: 0
+    if (startingPopulation == targetPopulation)
+    {
+        printf("Years: 0\n");
+    }
+    else
+    {
+        // Calculate number of years until we reach target population
+        do
+        {
+            int currentBirthRate = currentPopulation / 3;
+            int currentDeathRate = currentPopulation / 4;
+
+            currentPopulation += currentBirthRate - currentDeathRate;
+
+            yearsElapsed++;
+        }
+        while(currentPopulation < targetPopulation);
+
+        // Print number of years
+        printf("Years: %i\n", yearsElapsed);
+    }
 }
