@@ -28,14 +28,14 @@ int main(void)
 
 int count_letters(string text)
 {
-    int textLenght = strlen(text);
+    int textLength = strlen(text);
 
     float letterCount = 0;
     float wordCount = 1;
     float sentenceCount = 0;
 
     // Loops through each character in the text to count letters, words, and sentences
-    for (int character = 0; character < textLenght; character++)
+    for (int character = 0; character < textLength; character++)
     {
         char currentCharacter = text[character];
 
@@ -54,10 +54,10 @@ int count_letters(string text)
     }
 
     // Calculates the grade using the Coleman-Liau index
-    float avarageLetters = letterCount / wordCount * 100;
-    float avarageSentences = sentenceCount / wordCount * 100;
+    float averageLetters = letterCount / wordCount * 100;
+    float averageSentences = sentenceCount / wordCount * 100;
 
-    int grade = round(0.0588 * avarageLetters - 0.296 * avarageSentences - 15.8);
+    int grade = round(0.0588 * averageLetters - 0.296 * averageSentences - 15.8);
 
     return grade;
 }

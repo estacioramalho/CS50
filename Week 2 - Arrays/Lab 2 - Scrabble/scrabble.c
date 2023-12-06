@@ -34,12 +34,12 @@ int main(void)
 
 int compute_score(string word)
 {
-    int wordLenght = strlen(word);
+    int wordLength = strlen(word);
     char letter;
     int score = 0;
 
     // Loops through each letter of the word
-    for (int letterPosition = 0; letterPosition < wordLenght; letterPosition++)
+    for (int letterPosition = 0; letterPosition < wordLength; letterPosition++)
     {
         letter = word[letterPosition];
 
@@ -52,7 +52,6 @@ int compute_score(string word)
         // Check if it's a lowercase letter and score
         else if (letter >= 'a' && letter <= 'z')
         {
-
             score+= POINTS[(letter - 97)];
         }
     }
