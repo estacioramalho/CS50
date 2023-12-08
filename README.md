@@ -1,2 +1,2 @@
 # CS50
- Harvard's Introduction to Computer Science
+Archive of projects from CS50
